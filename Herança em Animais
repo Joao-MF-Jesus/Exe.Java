@@ -1,0 +1,54 @@
+public class Animais {
+    static class Animal {
+        String nome;
+        int idade;
+
+        Animal(String nome, int idade) {
+            this.nome = nome;
+            this.idade = idade;
+        }
+
+        void emitirSom() {
+            System.out.println("Som genérico de animal");
+        }
+
+        void exibirInfo() {
+            System.out.println("Nome: " + nome + ", Idade: " + idade);
+        }
+    }
+
+    static class Cachorro extends Animal {
+        Cachorro(String nome, int idade) {
+            super(nome, idade);
+        }
+
+        @Override
+        void emitirSom() {
+            System.out.println("Latindo...");
+        }
+    }
+
+    static class Gato extends Animal {
+        Gato(String nome, int idade) {
+            super(nome, idade);
+        }
+
+        @Override
+        void emitirSom() {
+            System.out.println("Miando...");
+        }
+    }
+
+    public static void main(String[] args) {
+        Cachorro cachorro = new Cachorro("Rex", 5);
+        Gato gato = new Gato("Mimi", 3);
+
+        System.out.println("Cachorro:");
+        cachorro.exibirInfo();
+        cachorro.emitirSom();
+
+        System.out.println("\nGato:");
+        gato.exibirInfo();
+        gato.emitirSom();
+    }
+}
